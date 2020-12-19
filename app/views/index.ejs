@@ -1,0 +1,30 @@
+<%- include('partials/header')  %> 
+
+
+<div id="root" class="d-flex flex-column" >
+    <%- include('partials/nav')  %> 
+       
+    <div class="row mx-auto  d-flex justify-content-center align-items-center ">
+        <div class="col-lg-6">
+            <h1>Welcome sur la page de test</h1>
+            <% if(locals.user) { %> 
+                <span>Hey <b><%= locals.user.firstname %></b> ! <br><span>Vous voici enfin connecté, ca fait plaisir ! Maintenant il n'y a plus qu'à..</span>
+                <a href="/search"> <button class="btn btn-primary btn-lg"><i class="far fa-arrow-alt-circle-right pr-2"></i>recherche</button></a></span>
+                <a href="/profil"> <button class="btn btn-primary btn-lg"><i class="far fa-arrow-alt-circle-right pr-2"></i>profil</button></a></span>
+            <% } else { %> 
+                <span>Pour tester les API, rien de plus simple,</span>
+                <a href="/subscribe"> <button class="btn btn-primary btn-lg"><i class="far fa-arrow-alt-circle-right pr-2"></i>S'inscrire</button></a>
+            <% } %> 
+        </div>
+    
+        <div class="col-lg-6">
+            <figure>
+                <img src="https://www.adzif.biz/boutique/images_produits/f0088_sticker_mecanique-z.jpg">
+            </figure>
+        </div>
+    </div>
+
+
+
+        
+<%- include('partials/footer')  %> 

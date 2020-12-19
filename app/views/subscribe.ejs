@@ -1,0 +1,83 @@
+<%- include('partials/header')  %> 
+
+
+<div id="root" class="d-flex flex-column" >
+    <%- include('partials/nav')  %> 
+       
+
+
+        <div id="mainContainer" class="container d-flex justify-content-center align-items-center m mt-3">
+                <div class="container d-flex justify-content-center align-items-center flex-column">
+                    
+                    <form action="" method="POST" class="border p-3">
+                        <h2 class="mb-3 border-bottom">Espace Inscription</h2>
+
+                        <!-- CHAMP NOM -->
+                        <div class="form-group">
+                            <label class="" for="lastname">Nom<input type="text" class="form-control" placeholder="Indiquer votre nom" id="lastname" name="lastname" aria-label="lastname" value=<%= locals.requestUserInfos ? locals.requestUserInfos.lastname : '' %>></label>
+                            <!-- CHAMP PRENOM -->
+                            <label class="" for="firstname">Prénom<input type="text" class="form-control" placeholder="Indiquer votre prénom" id="firstname" name="firstname" aria-label="firstname" value=<%= locals.requestUserInfos ? locals.requestUserInfos.firstname : '' %>></label>
+                        </div>
+
+                        <!-- CHAMP EMAIL -->
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="email">@</label>
+                                </div>
+                                <input type="email" class="form-control" placeholder="Indiquer votre email" id="email" name="email" aria-label="email"value=<%= locals.requestUserInfos ? locals.requestUserInfos.email : '' %>>
+                            </div>
+                        </div>
+                        
+                        <!-- CHAMP PASSWORD -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text" for="password">Password</label>
+                                </div>
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Indiquer votre mot de passe">
+                                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirmation password">
+                            </div>
+                            
+                        </div>
+                            <!--
+                                <div class="toogle__password">
+                                    <i class="fa fa-eye"></i>
+                                    <i class="fa fa-eye-slash"></i>
+                                </div>
+                            -->
+                                <div class="container__password">
+                                    <div class="pw pw__length">
+                                        - 8 caractères minimum
+                                    </div>
+                                    <div class="pw pw__number">
+                                        - doit contenir au minimum 1 chiffre
+                                    </div>
+                                    <div class="pw pw__uppercase">
+                                        - doit contenir au minimum 1 majuscule
+                                    </div>
+                                    <div class="pw pw__special">
+                                        - doit contenir un minimum 1 caractère spécial (+,/!..etc)
+                                    </div>                                   
+                                </div>
+
+
+
+
+                        
+                        <!-- CHAMP ENREGISTREMENT -->
+                        <button type="submit" class="btn btn-primary">S'enregistrer</button>
+
+                    </form>
+
+                    <% if(locals.errors) { %>
+                        <% for(const error of locals.errors) { %>
+                            <div class="alert alert-danger">
+                                <%= error %>
+                            </div>
+                        <% } %>
+                    <% } %>
+
+                </div>
+        </div>
+<%- include('partials/footer')  %> 

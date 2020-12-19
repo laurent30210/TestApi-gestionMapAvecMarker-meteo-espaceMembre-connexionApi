@@ -1,0 +1,51 @@
+<%- include('partials/header')  %> 
+
+
+<div id="root" class="d-flex flex-column" >
+    <%- include('partials/nav')  %> 
+       
+
+
+        <div id="mainContainer" class="container d-flex justify-content-center align-items-center m mt-3">
+                <div class="container d-flex justify-content-center align-items-center flex-column">
+                    
+                    <form action="" method="POST" class="border p-3">
+                        <h2 class="mb-3 border-bottom">Espace de connexion</h2>
+
+                        
+                        <!-- CHAMP EMAIL -->
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">@</span>
+                                </div>
+                                <input type="email" class="form-control" placeholder="Indiquer votre email" name="email" aria-label="email" value=<%= locals.fields ? locals.fields.email : '' %>>
+                            </div>
+                        </div>
+                        
+                        <!-- CHAMP PASSWORD -->
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Password</span>
+                                </div>
+                                <input type="password" class="form-control" id="password"  name="password" placeholder="Indiquer votre mot de passe" value=<%= locals.fields ? locals.fields.password : '' %>>
+                            </div>
+                        </div>
+                        
+                        <!-- CHAMP CONNEXION -->
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input">
+                          <label class="form-check-label" for="checkbox" value="remembere">Se souvenir de moi</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">se connecter</button>
+                    </form>
+                    <% if(locals.error) { %> 
+                        <div class="alert alert-success"><%= error %></div>
+                    <% } %> 
+                    
+                   
+                    
+                </div>
+        </div>
+<%- include('partials/footer')  %> 

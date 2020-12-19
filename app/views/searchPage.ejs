@@ -1,0 +1,57 @@
+<%- include('partials/header')  %> 
+
+
+<div id="root" class="d-flex flex-column" >
+    <%- include('partials/nav')  %> 
+       
+
+
+        <div id="mainContainer" class="d-flex justify-content-center align-items-center m mt-3">
+                <div class="row">                    
+                    <%- include('partials/formSearch') %>                    
+
+                    <div class="d-flex mx-auto mt-5">
+
+                                <div id="containerInfosCoords" class="col-lg-6 d-flex flex-column text-left align-self-start border border-light">
+                                    <% if(locals.user) { %>
+                                        <div>Bonjour <%= user.firstname %> voici les infos vous concernant</div>
+                                    <% } %>
+
+                                    <div class="textIp">Votre Ip est : <span id="spanIP" class="font-weight-bold">192.168.0.1</span> </div>
+                                    <div class="textCity">Vous êtes localisé à : <span id="spanCity" class="font-weight-bold">MichelCity</span> </div>
+                                    <div class="textTemp">il fait <span id="spanTemp" class="font-weight-bold">30°</span>° avec un <span class="weatherDesc"></span> </div> 
+                                </div>
+                            
+                            <div class="col-lg-6 d-flex justify-content-center">
+                                <div class="map container">
+                                    <p class="border-bottom text-secondary text-center">map avec localisation navigateur</p>
+                                    <div class="d-flex">
+                                        <div class="ml-2">
+                                                <input type="checkbox" name="param1" class="param1">
+                                                <label for="param1">param1</label>
+                                        </div>
+                                        <div class="ml-2">
+                                            <input type="checkbox" name="param2" class="param2">
+                                            <label for="param2">param2</label>
+                                        </div>
+                                        <div class="ml-2">
+                                            <input type="checkbox" name="param3" class="param3">
+                                            <label for="param3">param3</label>
+                                        </div>
+                                        <div class="ml-2">
+                                            <input type="checkbox" name="param4" class="param4">
+                                            <label for="param4">param4</label>
+                                        </div>
+                                        <div class="ml-2">
+                                            <input type="checkbox" name="param5" class="param5">
+                                            <label for="param5">param5</label>
+                                        </div>
+                                    </div>
+                                    <div class="border border-light" style="height: 500px;" id="mapid"></div>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+        </div>
+<%- include('partials/footer')  %> 

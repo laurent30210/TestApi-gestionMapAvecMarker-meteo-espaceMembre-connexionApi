@@ -1,0 +1,49 @@
+<%- include('partials/header')  %> 
+
+
+<div id="root" class="d-flex flex-column" >
+    <%- include('partials/nav')  %> 
+
+        <div id="mainContainer" class="m-3">
+                <div class="row">                    
+                    <h2 class="mx-auto border-bottom">Espace personnel</h2>
+                </div>
+                <% if(locals.user) { %>
+                <div class="row">                    
+                    <div class="col-6">
+                            <div class=" w-auto border border-black mt-3 p-4">
+                                <h3>Vos données personnelles </h3>
+                                <div class="profilContent">
+                                    <div class="lastName">nom :   <%= user.lastname %></div>
+                                    <div class="firstName">prénom : <%= user.firstname %></div>
+                                    <div class="email">email : <%= user.email  %></div>                            
+                                    <div class="password"><a href="/changePassword">Modifier votre mot de passe</a></div>                            
+                                </div>
+                            </div>
+                            <div class="col-3 w-auto border border-black mt-3 p-4">
+                                <h3>Votre profil </h3>
+                                <div class="profilImg">
+                                    <div class="">votre image de profil</div>
+                                    <div class="">
+                                        <img class="img-fluid" src="https://www.reussirmavie.net/photo/art/default/4917219-7338890.jpg?v=1517524283" alt="" srcset="">
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="col-4">
+                            <div class=" w-auto border border-black mt-3 p-4">
+                                <h3>Vos résultats de recherche </h3>
+                                <div class="resultContent">
+                                    <div class="searchCity">test</div>
+                                    <div class="counter">0</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% } else { %>
+                    <div class="alert alert-danger">Il y a un problème, merci de ré-essayer dans quelques minutes</div>
+                <% } %>
+        </div>
+
+<%- include('partials/footer')  %> 
