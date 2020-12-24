@@ -1,5 +1,5 @@
-const API_KEY = "at_arFUaFY2DqOYRPJXhskALzKfUgtNn";
-const API_KEY_WEATHER = "ffe5f1ec3fc89d7f62bb1b80bb651349";
+const API_KEY = process.ENV.apiKey;
+const API_KEY_WEATHER = process.ENV.apiKeyWeather;
 const arrayCity = [];
 const mymap = L.map('mapid');
 
